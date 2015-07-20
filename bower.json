@@ -8,6 +8,10 @@
     "luozhong@camera360.com"
   ],
   "license": "MIT",
+  "dependencies": {
+    "PGPromise": "https://github.com/pinguo-yangyang/PGPromise",
+    "PGServer": "https://github.com/pinguo-luozhong/PGServer"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
