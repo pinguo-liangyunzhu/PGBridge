@@ -1,6 +1,6 @@
 {
   "name": "PGBridge",
-  "versions": "1.0.1",
+  "versions": "1.0.2",
   "homepage": "https://github.com/pinguo-luozhong/PGBridge",
   "description": "PGBridge",
   "main": "dist/PGBridge.min.js",
