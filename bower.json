@@ -9,7 +9,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "PGPromise": "~1.0",
     "PGServer": "~1.0"
   },
   "ignore": [
