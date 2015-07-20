@@ -9,8 +9,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "PGPromise": "https://github.com/pinguo-yangyang/PGPromise",
-    "PGServer": "https://github.com/pinguo-luozhong/PGServer"
+    "PGPromise": "~1.0",
+    "PGServer": "~1.0"
   },
   "ignore": [
     "**/.*",
