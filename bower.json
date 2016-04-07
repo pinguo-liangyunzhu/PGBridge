@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "PGServer": "https://github.com/pinguo-luozhong/PGServer.git"
+    
   },
   "ignore": [
     "**/.*",
