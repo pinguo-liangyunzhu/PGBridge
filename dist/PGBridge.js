@@ -17,8 +17,12 @@
  @author zhangzhi
  @email zhangzhi@camera360.com
  @edit by liangyunzhu 2015/06/17
+ @edit by luozhong 2016/04/14
  @email liangyunzhu@camera360.com
+ @email luozhong@camera360.com
  */
+
+!function(a){var e,f,g,h,b={},c={host:a.location.host,mode:"dev"},d=a.PGPromise;b.setConfig=function(a){for(var b in a)c[b]=a[b]},b.extend=function(a){for(var c in a)b[c]=a[c]},e={timeout:"请求超时",error404:"网络异常",error500:"服务出错"},f=function(){var f,i,b=Array.prototype.slice.call(arguments),d=b[0].concat(b[1]),e=h(d);return e.retry=0,f=c.host,"online"==c.mode&&(f=a.location.host),i="https://"+f,PG.log(e),e.server=e.method.indexOf("http")<0?i+("/"==i[i.length-1]?"":"/")+e.method:e.method,e.t=(new Date).getTime(),g(e)},b.getTicket=function(a,b,c){$.ajax({url:a,type:"GET",dataType:"jsonp",jsonp:"jsonpCallback",data:b}).done(function(a){c&&c(a)}).fail(function(){})},b.getJSON=f,g=function(a){return $.ajax({timeout:3e4,type:a.requestType.toUpperCase(),url:a.server,data:a.serverData,dataType:"get"==a.requestType.toLowerCase()?"jsonp":"json",jsonp:"jsonpCallback",success:function(b){a.callback&&a.callback(b)},error:function(b,c,d){return"timeout"==d?(a.callback&&a.callback({status:501,message:e.timeout}),void 0):("abort"!=d&&""!=d&&(a.retry<=2?(a.retry++,g(a)):a.callback({status:500,message:e.timeout})),void 0)},statusCode:{404:function(){a.callback({status:404,message:e.error404})},500:function(){a.callback({status:500,message:e.error500})}}})},h=function(a){var b=null,c=null,d={},e="GET";switch(a.length){case 0:case 1:throw Error("Missing Arguments");case 2:if(b=a[0],c=a[1],!c instanceof Function)throw Error("Invild Arguments");break;case 3:if(b=a[0],d=a[1],c=a[2],!c instanceof Function)throw Error("Invild Arguments");break;case 4:if(b=a[0],d=a[1],e=a[2],c=a[3],!c instanceof Function)throw Error("Invild Arguments")}return{method:b,callback:c,serverData:d,requestType:e}},b.request=function(){var a=Array.prototype.slice.call(arguments);return new d(function(b){f(a,b)})},a.PGServer=b}(window);
 
 ;(function(){window.PGPromise=function(func){if(!(func instanceof Function)){throw new Error('not a function');return;}
 	var me=this;this.status='pending';this.callbackArr=[];var resolve=function(data){me.callbackArr.forEach(function(callback){callback(data);});me.status='end';}
@@ -1071,7 +1075,6 @@
 		return new a.Promise(function (callback) {
 
 			if (_isWX()) {
-
 				wx.uploadImage({
 					localId: params.localId,
 					isShowProgressTips: 0,
