@@ -822,7 +822,7 @@
 	}
 	;
 	var readyEvent = doc.createEvent('Events');
-	readyEvent.initEvent('PGJsSDK');
+	readyEvent.initEvent('PGJsSDK',"","");
 	readyEvent.bridge = WebViewJavascriptBridge;
 	readyEvent.priviteKey = priviteKey;
 	doc.dispatchEvent(readyEvent);
