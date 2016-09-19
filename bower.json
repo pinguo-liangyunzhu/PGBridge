@@ -1,21 +1,21 @@
 {
-  "name": "PGBridge",
+  "name": "PinguoBridge",
   "versions": "1.0.4",
   "homepage": "https://github.com/pinguo-liangyunzhu/PGBridge.git",
-  "description": "PGBridge",
+  "description": "PinguoBridge",
   "main": "dist/PGBridge.js",
   "authors": [
     "liangyunzhu@camera360.com"
   ],
   "license": "MIT",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "moduleType": [],
+  "private": true
 }
